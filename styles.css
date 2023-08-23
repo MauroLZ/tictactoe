@@ -1,0 +1,171 @@
+:root {
+    /* Color variables */
+    --background: #1A1A1A;
+    --titles: #E6E6E6;
+    --button_background: #FFB700;
+    --button_text: #1A1A1A;
+    --button_hover: #FFD700;
+    --empty_cell: #454545;
+    --cell_border: #333333;
+    --x_color: #FF3F3F;
+    --o_color: #007FFF;
+    --winning_color: #FFD700;
+    --contrast_color_1: #753783;
+    --blue_hover: #66A3D2;
+    --red_hover: #FF6868;
+
+    /* Dimension variables */
+    --cell_height: 133px;
+    --cell_width: 133px;
+    --gap: 5px;
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x_player, .o_player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    justify-content: center;
+    height: calc(3 * var(--cell_height) + 2 * var(--gap));
+    gap: 100px;
+    margin: 0 20px;
+    color: var(--titles);
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.player_icon {
+    font-size: 120px;
+}
+
+/* Add styling for the game board cells */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    width: 400px;
+    margin: 20px auto;
+}
+
+.inactive {
+    display: none !important;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell_width);
+    height: var(--cell_height);
+    background-color: var(--empty_cell);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: var(--button_hover);
+}
+
+.choose_character_title, .fight_title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 125px 0 60px 0;
+    color: var(--titles);
+}
+
+.choose-character {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+    width: 100%;
+    height: 300px;
+}
+
+.choose-character > .versus {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 50px;
+    font-size: 48px;
+    color: var(--titles);
+    font-weight: 700;
+}
+
+#x-character > i, #o-character > i {
+    font-size: 120px;
+    cursor: pointer;
+}
+
+#x-character {
+    color: var(--x_color);
+    margin-left: 40px;
+}
+
+#o-character {
+    color: var(--o_color);
+    margin-right: 40px;
+}
+
+#x-character, #o-character {
+    display: flex;
+    width: 35%;
+    height: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+}
+
+#x-character:hover {
+    background-color: var(--red_hover);
+    color: var(--button_text);
+}
+
+#o-character:hover {
+    background-color: var(--blue_hover);
+    color: var(--button_text);
+}
+
+.stats {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+}
+
+.stats > span {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+ul > li {
+    font-size: 28px;
+    display: flex;
+    font-weight: 600;
+    align-items: baseline;
+}
+
+ul > li span {
+    display: inline-block;
+    width: 120px;
+    font-size: inherit;
+    margin-right: 30px;
+}
+
