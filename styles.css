@@ -50,6 +50,14 @@ body {
     font-weight: bold;
 }
 
+.x_player {
+    color: var(--x_color);
+}
+
+.o_player {
+    color: var(--o_color);
+}
+
 .player_icon {
     font-size: 120px;
 }
@@ -169,3 +177,10 @@ ul > li span {
     margin-right: 30px;
 }
 
+.winner-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 125px 0 60px 0;
+    color: var(--titles);
+    text-align: center;
+}
